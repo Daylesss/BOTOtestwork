@@ -1,6 +1,6 @@
 import openai
 #простейший метод с точки зрения реализации, при этом наиболее точный.
-openai.api_key = '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'
+openai.api_key = 'API KEY'
 # функция определяет, является ли фраза осмысленной на основе того, может ли Chatgpt  сгенерировать следующее слово
 def is_nonsense_string(input_string):
     response = openai.Completion.create(
