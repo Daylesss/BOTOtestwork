@@ -70,6 +70,52 @@
     │   ├── bot.py
     │   ├── config.py
     │   ├── dialogs
+    │   │   ├── balance
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── card
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── deposit
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── errors.py
+    │   │   ├── history
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── main_dialog
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── reports
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── settings
+    │   │   │   ├── __init__.py
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   ├── states.py
+    │   │   ├── trader_auth
+    │   │   │   ├── dialog.py
+    │   │   │   ├── getters.py
+    │   │   │   └── handlers.py
+    │   │   └── withdraw
+    │   │       ├── __init__.py
+    │   │       ├── dialog.py
+    │   │       ├── getters.py
+    │   │       └── handlers.py
     │   ├── enums.py
     │   ├── kasha.py
     │   ├── middlewares.py
@@ -88,10 +134,35 @@
     │   ├── clientapp.py
     │   ├── config.py
     │   ├── fapi
+    │   │   ├── frontapi
+    │   │   │   ├── __init__.py
+    │   │   │   └── schemas.py
+    │   │   └── traderapi
+    │   │       ├── __init__.py
+    │   │       └── schemas.py
     │   ├── kasha.py
     │   ├── main.py
     │   ├── requirements.txt
     │   ├── static
+    │   │   ├── app.js
+    │   │   ├── css
+    │   │   │   ├── style.css
+    │   │   │   └── style.min.css
+    │   │   ├── fonts
+    │   │   │   ├── Inter-Bold.woff
+    │   │   │   ├── Inter-Bold.woff2
+    │   │   │   ├── Inter-Regular.woff
+    │   │   │   └── Inter-Regular.woff2
+    │   │   ├── img
+    │   │   │   └── icons
+    │   │   │       ├── attach.svg
+    │   │   │       ├── copy.svg
+    │   │   │       ├── delete.svg
+    │   │   │       └── rub.svg
+    │   │   ├── jquery.2.3.5.min.js
+    │   │   ├── js
+    │   │   │   └── app.min.js
+    │   │   └── loader.gif
     │   └── tools.py
     ├── manager
     │   ├── Dockerfile
@@ -119,19 +190,245 @@
     │   ├── README.md
     │   ├── app.py
     │   ├── data
+    │   │   └── bankbins.json
     │   └── requirements.txt
     ├── pitupi
     │   ├── Dockerfile
     │   ├── cli
+    │   │   ├── __init__.py
+    │   │   ├── admin.py
+    │   │   ├── apps.py
+    │   │   ├── migrations
+    │   │   │   ├── 0001_initial.py
+    │   │   │   ├── 0002_alter_clientdeposit_options_and_more.py
+    │   │   │   ├── 0002_clientsetting.py
+    │   │   │   ├── 0003_merge_20230901_1622.py
+    │   │   │   ├── 0004_clientdepositmanager.py
+    │   │   │   ├── 0005_clientclient.py
+    │   │   │   ├── 0006_alter_clientclient_options.py
+    │   │   │   ├── 0007_alter_clientclient_options.py
+    │   │   │   └── __init__.py
+    │   │   ├── models.py
+    │   │   ├── tests.py
+    │   │   └── views.py
     │   ├── manage.py
     │   ├── money
+    │   │   ├── __init__.py
+    │   │   ├── admin.py
+    │   │   ├── apps.py
+    │   │   ├── config.py
+    │   │   ├── fixtures
+    │   │   │   ├── bank_setting.json
+    │   │   │   ├── banks.json
+    │   │   │   ├── currencies.json
+    │   │   │   ├── mdl_currency.json
+    │   │   │   ├── settings.json
+    │   │   │   └── test_users.json
+    │   │   ├── forms.py
+    │   │   ├── helper.py
+    │   │   ├── kafka.py
+    │   │   ├── management
+    │   │   │   ├── __init__.py
+    │   │   │   └── commands
+    │   │   │       ├── __init__.py
+    │   │   │       ├── cleaner.py
+    │   │   │       ├── kafka_consumer.py
+    │   │   │       ├── kasha.py
+    │   │   │       ├── proxy_loader.py
+    │   │   │       ├── recognizer.py
+    │   │   │       └── test_cleaner.py
+    │   │   ├── migrations
+    │   │   │   ├── 0001_initial.py
+    │   │   │   ├── 0002_bank_alter_deposit_options_alter_withdraw_options_and_more.py
+    │   │   │   ├── 0003_remove_deposit_error_status_deposit_error_desc_and_more.py
+    │   │   │   ├── 0004_alter_visit_error_desc.py
+    │   │   │   ├── 0005_alter_deposit_error_desc.py
+    │   │   │   ├── 0006_deposit_pre_status_visit_callback_at_and_more.py
+    │   │   │   ├── 0007_deposit_allowed_clients_visit_gate_data_and_more.py
+    │   │   │   ├── 0008_deposit_error_type_withdraw_usage.py
+    │   │   │   ├── 0009_visit_error_type_alter_deposit_error_type.py
+    │   │   │   ├── 0010_alter_withdraw_priority.py
+    │   │   │   ├── 0011_provider_supplier_rename_bank_deposit_issuer_and_more.py
+    │   │   │   ├── 0012_fill_exists_cards.py
+    │   │   │   ├── 0013_deposit_acquirer_visit_acquirer.py
+    │   │   │   ├── 0014_card_last_deposit_at_card_last_withdraw_at_and_more.py
+    │   │   │   ├── 0015_proxysupplier_gate_is_turbo_proxy_visit_proxy.py
+    │   │   │   ├── 0016_deposit_user_agent_visit_browser_agent_and_more.py
+    │   │   │   ├── 0017_alter_visit_deposit.py
+    │   │   │   ├── 0018_account_remove_client_master_client_telegram_id_and_more.py
+    │   │   │   ├── 0019_rename_flow_deposit_method_and_more.py
+    │   │   │   ├── 0020_card_limit.py
+    │   │   │   ├── 0021_alter_deposit_pre_status_alter_deposit_status_and_more.py
+    │   │   │   ├── 0022_deposit_original_amount_deposit_updated_at_and_more.py
+    │   │   │   ├── 0023_alter_card_status.py
+    │   │   │   ├── 0024_alter_account_sub_id.py
+    │   │   │   ├── 0025_alter_client_name_alter_client_telegram_id.py
+    │   │   │   ├── 0026_alter_account_currency.py
+    │   │   │   ├── 0027_account_denominator_account_is_master.py
+    │   │   │   ├── 0027_setting_alter_account_created_at_and_more.py
+    │   │   │   ├── 0028_merge_20230505_1427.py
+    │   │   │   ├── 0029_currency_remove_account_denominator_and_more.py
+    │   │   │   ├── 0030_auto_20230510_1835.py
+    │   │   │   ├── 0031_auto_20230510_1836.py
+    │   │   │   ├── 0032_operationlog.py
+    │   │   │   ├── 0033_deposit_pin.py
+    │   │   │   ├── 0034_alter_card_limit.py
+    │   │   │   ├── 0035_account_address.py
+    │   │   │   ├── 0036_card_currency.py
+    │   │   │   ├── 0037_deposit_data_withdraw_data.py
+    │   │   │   ├── 0038_receipt_withdraw_withdraw_asignee_and_more.py
+    │   │   │   ├── 0039_remove_operationlog_operation_operationlog_deposit_and_more.py
+    │   │   │   ├── 0040_alter_operationlog_deposit.py
+    │   │   │   ├── 0041_deposit_notify_trader_at_withdraw_notify_trader_at.py
+    │   │   │   ├── 0042_banksetting.py
+    │   │   │   ├── 0043_remove_withdraw_asignee_withdraw_assignee.py
+    │   │   │   ├── 0044_withdraw_kind_alter_withdraw_assignee_tradersettings.py
+    │   │   │   ├── 0045_account_withdraw_online.py
+    │   │   │   ├── 0046_clientwithdraw_deposit_external_id_and_more.py
+    │   │   │   ├── 0046_rename_online_account_deposit_online.py
+    │   │   │   ├── 0047_remove_tradersettings_bank_and_more.py
+    │   │   │   ├── 0048_merge_20230618_0152.py
+    │   │   │   ├── 0049_alter_tradersettings_trader.py
+    │   │   │   ├── 0050_alter_deposit_method_alter_withdraw_method.py
+    │   │   │   ├── 0051_auto_20230620_1511.py
+    │   │   │   ├── 0052_clientreceipt.py
+    │   │   │   ├── 0053_alter_operationlog_tag.py
+    │   │   │   ├── 0054_clientgroup_account_is_verified_client_group_set.py
+    │   │   │   ├── 0055_trader.py
+    │   │   │   ├── 0056_receipt_withdraw_group_id_withdraw_withdraw_group_id.py
+    │   │   │   ├── 0057_receiptgroup_withdrawgroup_alter_deposit_pre_status_and_more.py
+    │   │   │   ├── 0058_receipt_bank_from_receipt_card_from_receipt_data_and_more.py
+    │   │   │   ├── 0059_alter_deposit_pre_status_alter_deposit_status_and_more.py
+    │   │   │   ├── 0059_receipt_receipt_image.py
+    │   │   │   ├── 0060_account_max_order_amount_db.py
+    │   │   │   ├── 0060_withdraw_assignee_trader_setting.py
+    │   │   │   ├── 0061_receipt_is_recognition_attempt.py
+    │   │   │   ├── 0062_merge_20230707_1116.py
+    │   │   │   ├── 0063_merge_20230707_1713.py
+    │   │   │   ├── 0064_notificationapp_smsapp.py
+    │   │   │   ├── 0064_toptrader.py
+    │   │   │   ├── 0065_merge_0064_notificationapp_smsapp_0064_toptrader.py
+    │   │   │   ├── 0066_delete_notificationapp_delete_smsapp_and_more.py
+    │   │   │   ├── 0067_notificationapp_smsapp_toptrader.py
+    │   │   │   ├── 0068_notificationapp_amount_notificationapp_bank_and_more.py
+    │   │   │   ├── 0069_deposit_assignee_alter_deposit_pre_status_and_more.py
+    │   │   │   ├── 0070_alter_deposit_assignee_alter_withdraw_assignee.py
+    │   │   │   ├── 0071_deposit_fail_url_deposit_success_url.py
+    │   │   │   ├── 0072_alter_operationlog_tag.py
+    │   │   │   ├── 0073_clientdeposit.py
+    │   │   │   ├── 0074_deposit_success_trigger_withdraw_deposit_and_more.py
+    │   │   │   ├── 0075_alter_deposit_success_trigger_and_more.py
+    │   │   │   ├── 0076_alter_deposit_method_alter_withdraw_method.py
+    │   │   │   ├── 0077_clientmanager_alter_deposit_pre_status_and_more.py
+    │   │   │   ├── 0077_notificationapp_account_notificationapp_cards_and_more.py
+    │   │   │   ├── 0078_merge_20230814_1918.py
+    │   │   │   ├── 0079_alter_trader_options_and_more.py
+    │   │   │   ├── 0080_client_merchant_brand.py
+    │   │   │   ├── 0081_tradersettings_bank_settings_and_more.py
+    │   │   │   ├── 0082_auto_20230822_1802.py
+    │   │   │   ├── 0083_remove_tradersettings_bank_setting.py
+    │   │   │   ├── 0084_remove_tradersettings_bank_settings_and_more.py
+    │   │   │   ├── 0085_tradersettings_freeze_and_more.py
+    │   │   │   ├── 0086_rename_tradersettings_tradersetting.py
+    │   │   │   ├── 0087_alter_tradersetting_amount_done_and_more.py
+    │   │   │   ├── 0088_clienttradersetting_alter_tradersetting_amount_done_and_more.py
+    │   │   │   ├── 0089_alter_trader_options_and_more.py
+    │   │   │   ├── 0090_clientsetting_alter_trader_options.py
+    │   │   │   ├── 0090_delete_clientdeposit_delete_clientmanager_and_more.py
+    │   │   │   ├── 0091_merge_20230830_1417.py
+    │   │   │   ├── 0091_merge_20230831_1406.py
+    │   │   │   ├── 0092_alter_withdraw_options.py
+    │   │   │   ├── 0092_delete_clientsetting.py
+    │   │   │   ├── 0093_alter_deposit_options_alter_withdraw_options_and_more.py
+    │   │   │   ├── 0094_alter_deposit_success_trigger_and_more.py
+    │   │   │   ├── 0094_merge_20230901_1622.py
+    │   │   │   ├── 0095_merge_20230923_1619.py
+    │   │   │   ├── 0096_bank_currency_alter_client_merchant_brand.py
+    │   │   │   ├── 0097_card_device_id_card_online_at.py
+    │   │   │   ├── 0098_alter_card_online_at.py
+    │   │   │   ├── 0098_alter_deposit_method_alter_withdraw_method.py
+    │   │   │   ├── 0099_merge_20230929_2012.py
+    │   │   │   ├── 0099_merge_20231002_1842.py
+    │   │   │   ├── 0100_account_need_premoderation.py
+    │   │   │   ├── 0101_merge_20231002_1921.py
+    │   │   │   ├── 0102_alter_account_need_premoderation.py
+    │   │   │   ├── 0103_card_phone.py
+    │   │   │   ├── 0104_card_card_holder.py
+    │   │   │   ├── 0105_alter_c2ctradecard_options_alter_c2ctradecard_card_and_more.py
+    │   │   │   ├── 0105_alter_c2ctradecard_options_client_full_name_and_more.py
+    │   │   │   ├── 0106_merge_20231114_1638.py
+    │   │   │   ├── 0107_alter_client_merchant_brand.py
+    │   │   │   ├── 0108_account_deposit_priority.py
+    │   │   │   ├── 0109_alter_client_merchant_brand.py
+    │   │   │   ├── 0110_card_max_amount_limit_card_transcation_count_limit_and_more.py
+    │   │   │   ├── 0111_rename_transcation_count_limit_card_transaction_count_limit_and_more.py
+    │   │   │   ├── 0112_card_min_amount_limit.py
+    │   │   │   ├── 0113_account_max_withdraw_order_count.py
+    │   │   │   ├── 0114_alter_deposit_pre_status_alter_deposit_status_and_more.py
+    │   │   │   ├── 0114_deposit_allowed_groups_withdraw_allowed_groups.py
+    │   │   │   ├── 0115_client_user.py
+    │   │   │   ├── 0116_alter_client_user.py
+    │   │   │   ├── 0117_clientgroup_secret.py
+    │   │   │   ├── 0118_merge_20231215_2102.py
+    │   │   │   ├── 0119_client_withdraw_priority.py
+    │   │   │   ├── 0120_alter_client_withdraw_priority.py
+    │   │   │   ├── 0121_alter_client_full_name.py
+    │   │   │   ├── 0122_client_kind_alter_card_status.py
+    │   │   │   ├── 0123_client_deposit_percent_client_withdraw_percent.py
+    │   │   │   ├── 0124_client_allow_cents_deposit_matching_amount_and_more.py
+    │   │   │   ├── 0125_alter_client_merchant_brand.py
+    │   │   │   └── __init__.py
+    │   │   ├── models.py
+    │   │   ├── tests.py
+    │   │   ├── utils.py
+    │   │   └── views.py
     │   ├── pitupi
+    │   │   ├── __init__.py
+    │   │   ├── asgi.py
+    │   │   ├── settings.py
+    │   │   ├── urls.py
+    │   │   └── wsgi.py
     │   ├── reports
+    │   │   ├── __init__.py
+    │   │   ├── admin.py
+    │   │   ├── apps.py
+    │   │   ├── migrations
+    │   │   │   ├── 0001_initial.py
+    │   │   │   └── __init__.py
+    │   │   ├── models.py
+    │   │   ├── tests.py
+    │   │   └── views.py
     │   ├── requirements.txt
     │   ├── templates
+    │   │   └── admin
+    │   │       └── search_form.html
     │   ├── tests
+    │   │   ├── __init__.py
+    │   │   └── deposit_tests.py
     │   ├── trader
+    │   │   ├── __init__.py
+    │   │   ├── admin.py
+    │   │   ├── apps.py
+    │   │   ├── migrations
+    │   │   │   ├── 0001_initial.py
+    │   │   │   └── __init__.py
+    │   │   ├── models.py
+    │   │   ├── tests.py
+    │   │   └── views.py
     │   └── turbo
+    │       ├── __init__.py
+    │       ├── admin.py
+    │       ├── apps.py
+    │       ├── migrations
+    │       │   ├── 0001_initial.py
+    │       │   ├── 0002_proxysupplier_proxy.py
+    │       │   ├── 0003_alter_useragent_gibfp.py
+    │       │   ├── 0004_useragent_headers_alter_useragent_gibfp.py
+    │       │   ├── 0005_useragent_status.py
+    │       │   └── __init__.py
+    │       ├── models.py
+    │       ├── tests.py
+    │       └── views.py
     └── pyproject.toml
 ```
 
